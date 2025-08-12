@@ -1,0 +1,19 @@
+{
+    "status": [
+        {
+            "id": 1,
+            "name": "Pending",
+            "color": "#f0f0f0"
+        },
+        {
+            "id": 2,
+            "name": "In Progress",
+            "color": "#ffeb3b"
+        },
+        {
+            "id": 3,
+            "name": "Done",
+            "color": "#4caf50"
+        }
+    ]
+}
