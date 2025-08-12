@@ -8,7 +8,14 @@
     "build": "vite build",
     "lint": "eslint src --ext .js,.jsx",
     "preview": "vite preview",
-    "test": "jest --watchAll=false --coverage --passWithNoTests"
+    "test": "jest --watchAll=false --coverage --passWithNoTests",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",
@@ -31,7 +38,9 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "husky": "^9.1.7",
     "jest": "^30.0.5",
+    "lint-staged": "^16.1.5",
     "lucide-react": "^0.536.0",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.0.6"
