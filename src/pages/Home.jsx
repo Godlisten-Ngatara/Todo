@@ -12,8 +12,9 @@ import CardBody from "../components/CardBody";
 import DropDownMenu from "../components/DropDown";
 import { getCategories, getPriorities, getStatus } from "../database";
 import { getNameById } from "../utilities/getNameById";
+import { AddTodoContext } from "../contexts/addTodo";
 function Home() {
-  const [isVisible, setIsVisible] = useState(false);
+  const {showModal, setShowModal} = React.useContext(AddTodoContext);
 
   const [selectedStatus, setSelectedStatus] = useState(null);
 
@@ -39,7 +40,7 @@ function Home() {
       <p className="text-gray-700 mb-6">
         Organize your tasks with texts and priorities
       </p>
-      <Button className="mb-6" onClick={() => setIsVisible(true)}>
+      <Button className="mb-6" onClick={() => setShowModal(true)}>
         <Plus className="mr-2" />
         Add Task
       </Button>
@@ -100,7 +101,7 @@ function Home() {
           <CardBody>Total tasks</CardBody>
         </Card>
       </div>
-      <Modal visible={isVisible} onClose={setIsVisible} onAddTodo={addTodo}/>
+      <Modal visible={showModal} onClose={setShowModal} onAddTodo={addTodo}/>
     </div>
   );
 }
